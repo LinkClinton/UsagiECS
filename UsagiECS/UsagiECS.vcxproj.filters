@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{dcdc9d42-655b-4021-aba0-9c5d9454f6f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\_detail">
+      <UniqueIdentifier>{5ff93659-6c19-4e27-8267-c4c56d270720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Database">
+      <UniqueIdentifier>{68fc817b-d7d4-4a21-9ebd-9348d2719758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Entity">
+      <UniqueIdentifier>{df551f62-9403-4e46-8d06-b269d6d0b371}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{d633f53d-5ec1-47ba-9a52-1d70ec35c7f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Concept">
+      <UniqueIdentifier>{4f0daf1c-3ef1-4e01-95f3-60e917bcd2c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Container">
+      <UniqueIdentifier>{48e4fcf8-9f51-40b5-85b7-de33b403fc84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Memory">
+      <UniqueIdentifier>{86584073-75f9-4cf1-a3c7-79b7d4fcd26b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\Meta">
+      <UniqueIdentifier>{abdce7d1-c9fd-4b56-aaec-2ca04256b293}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime">
+      <UniqueIdentifier>{43661a7c-af92-46c9-9ba0-a550940870e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Memory">
+      <UniqueIdentifier>{562d2811-0f99-4558-9662-c76d23c29f5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Platform">
+      <UniqueIdentifier>{0958898b-d73c-459a-b9f8-f0142cf28c17}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\_detail\ComponentAccess.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\ComponentAccessAllowAll.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\ComponentAccessReadOnly.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\ComponentAccessSystemAttribute.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\ComponentFilter.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\EntityDatabaseAccessExternal.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\EntityDatabaseAccessInternal.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\EntityDatabaseViewFiltered.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\EntityDatabaseViewUnfiltered.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\EntityId.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\EntityIterator.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\EntityIteratorFiltered.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\EntityPage.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\EntityPageIterator.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\_detail\EntityView.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Database\EntityDatabase.hpp">
+      <Filter>Core\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Concepts.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\System.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Entity\Archetype.hpp">
+      <Filter>Core\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Entity\Component.hpp">
+      <Filter>Core\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Concept\ReallocatableAllocator.hpp">
+      <Filter>Library\Concept</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Concept\Rebindable.hpp">
+      <Filter>Library\Concept</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Container\DynamicArray.hpp">
+      <Filter>Library\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Memory\PoolAllocator.hpp">
+      <Filter>Library\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Meta\Tag.hpp">
+      <Filter>Library\Meta</Filter>
+    </ClInclude>
+    <ClInclude Include="Runtime\Memory\VirtualMemoryAllocator.hpp">
+      <Filter>Runtime\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Runtime\Platform\Kernel.hpp">
+      <Filter>Runtime\Platform</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Runtime\Memory\VirtualMemoryAllocator.cpp">
+      <Filter>Runtime\Memory</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

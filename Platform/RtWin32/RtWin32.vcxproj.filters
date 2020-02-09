@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="ntos.h" />
+    <ClInclude Include="Win32.hpp" />
+    <ClInclude Include="Win32MacroFix.hpp" />
+    <ClInclude Include="Utility\Rounding.hpp">
+      <Filter>Utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Win32RuntimeKernel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{67731cf6-af09-4c26-86ab-56e8423a19d3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
