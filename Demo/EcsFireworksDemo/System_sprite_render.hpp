@@ -1,5 +1,7 @@
 ﻿#pragma once
 
+#include <execution>
+
 #include "Type.hpp"
 #include "Runtime.hpp"
 
@@ -16,15 +18,17 @@ struct System_sprite_render
     // EntityDatabaseAccess adds layer of permission checking. if the system
     // does not have access to some components, the access is denied.
     template <typename RuntimeServices, typename EntityDatabaseAccess>
-    std::size_t update(RuntimeServices &&rt, EntityDatabaseAccess &&db)
+    std::size_t update(RuntimeServices&& rt, EntityDatabaseAccess&& db)
     {
-        std::size_t count = 0;
-        for(auto &&e : db.view(ReadAccess()))
-        {
-        	//todo : render sprite
-            printf("render!");
-            ++count;
-        }
-        return count;
+        std::atomic<std::size_t> count = 0;
+        std::for_each(std::execution::par, db.begin(), db.end(), [&](auto&& p) {
+            for (auto&& e : db.page_view(p, ReadAccess()))
+            {
+                printf("render!");
+                ++count; // VERY EXPENSIVE
+            }
+            });
+
+        return count.load();
     }
 };

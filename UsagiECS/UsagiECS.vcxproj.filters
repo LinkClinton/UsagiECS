@@ -120,6 +120,12 @@
     <ClInclude Include="Runtime\Platform\Kernel.hpp">
       <Filter>Runtime\Platform</Filter>
     </ClInclude>
+    <ClInclude Include="Core\_detail\EntityPageViewFiltered.hpp">
+      <Filter>Core\_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Library\Memory\SpinLock.hpp">
+      <Filter>Library\Memory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Runtime\Memory\VirtualMemoryAllocator.cpp">

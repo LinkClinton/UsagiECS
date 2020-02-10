@@ -173,11 +173,13 @@
     <ClInclude Include="Core\_detail\EntityIteratorFiltered.hpp" />
     <ClInclude Include="Core\_detail\EntityPage.hpp" />
     <ClInclude Include="Core\_detail\EntityPageIterator.hpp" />
+    <ClInclude Include="Core\_detail\EntityPageViewFiltered.hpp" />
     <ClInclude Include="Core\_detail\EntityView.hpp" />
     <ClInclude Include="Library\Concept\ReallocatableAllocator.hpp" />
     <ClInclude Include="Library\Concept\Rebindable.hpp" />
     <ClInclude Include="Library\Container\DynamicArray.hpp" />
     <ClInclude Include="Library\Memory\PoolAllocator.hpp" />
+    <ClInclude Include="Library\Memory\SpinLock.hpp" />
     <ClInclude Include="Library\Meta\Tag.hpp" />
     <ClInclude Include="Runtime\Memory\VirtualMemoryAllocator.hpp" />
     <ClInclude Include="Runtime\Platform\Kernel.hpp" />

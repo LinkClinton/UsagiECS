@@ -4,72 +4,74 @@
 
 namespace usagi
 {
-template <typename Database>
-class EntityPageIterator
-{
-public:
-    using iterator_category = std::input_iterator_tag;
-    using value_type        = typename Database::EntityPageT;
-    using difference_type   = int;
-    using pointer           = value_type *;
-    using reference         = value_type &;
-
-private:
-    Database *mDatabase = nullptr;
-    std::size_t mPageIndex = value_type::INVALID_PAGE;
-
-    reference dereference() const
+    template <typename Database>
+    class EntityPageIterator
     {
-        return mDatabase->mEntityPages.at(mPageIndex);
-    }
+    public:
+        using iterator_category = std::forward_iterator_tag;
+        using value_type = typename Database::EntityPageT;
+        using difference_type = std::ptrdiff_t;
+        using pointer = value_type*;
+        using reference = std::size_t;
 
-public:
-    EntityPageIterator(Database *database, const std::size_t page_index)
-        : mDatabase(database)
-        , mPageIndex(page_index)
-    {
-    }
+    private:
+        Database* mDatabase = nullptr;
+        std::size_t mPageIndex = value_type::INVALID_PAGE;
 
-    EntityPageIterator & operator++()
-    {
-        assert(mPageIndex != value_type::INVALID_PAGE);
+    public:
+        EntityPageIterator() = default;
 
-        mPageIndex = dereference().next_page;
-        return *this;
-    }
+        EntityPageIterator(Database* database, const std::size_t page_index)
+            : mDatabase(database)
+            , mPageIndex(page_index)
+        {
+        }
 
-    EntityPageIterator operator++(int)
-    {
-        EntityPageIterator ret = *this;
-        ++(*this);
-        return ret;
-    }
+        EntityPageIterator& operator++()
+        {
+            assert(mPageIndex != value_type::INVALID_PAGE);
 
-    reference operator*() const
-    {
-        return dereference();
-    }
+            mPageIndex = ref().next_page;
+            return *this;
+        }
 
-    pointer operator->() const
-    {
-        return &dereference();
-    }
+        EntityPageIterator operator++(int)
+        {
+            EntityPageIterator ret = *this;
+            ++(*this);
+            return ret;
+        }
 
-    // Equality Comparators
+        auto& ref() const
+        {
+            return mDatabase->mEntityPages.at(mPageIndex);
+        }
 
-    friend bool operator==(
-        const EntityPageIterator &lhs,
-        const EntityPageIterator &rhs)
-    {
-        return lhs.mDatabase == rhs.mDatabase
-            && lhs.mPageIndex == rhs.mPageIndex;
-    }
+        reference operator*() const
+        {
+            return mPageIndex;
+        }
 
-    friend bool operator!=(
-        const EntityPageIterator &lhs,
-        const EntityPageIterator &rhs)
-    {
-        return !(lhs == rhs);
-    }
-};
+        pointer operator->() const
+        {
+            return &ref();
+        }
+
+        // Equality Comparators
+
+        friend bool operator==(
+            const EntityPageIterator& lhs,
+            const EntityPageIterator& rhs)
+        {
+            return lhs.mDatabase == rhs.mDatabase
+                && lhs.mPageIndex == rhs.mPageIndex;
+        }
+
+        friend bool operator!=(
+            const EntityPageIterator& lhs,
+            const EntityPageIterator& rhs)
+        {
+            return !(lhs == rhs);
+        }
+    };
 }

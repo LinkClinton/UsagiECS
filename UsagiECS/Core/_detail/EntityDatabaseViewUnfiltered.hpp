@@ -5,38 +5,38 @@
 
 namespace usagi
 {
-/**
- * \brief Unfiltered Entity Database View.
- * \tparam Database
- */
-template <
-    typename Database,
-    typename ComponentAccess
->
-class EntityDatabaseViewUnfiltered
-    : public EntityDatabaseAccessInternal<Database>
-{
-public:
-    using DatabaseT = Database;
-    using ComponentAccessT = ComponentAccess;
-    using IteratorT = EntityIterator<
-        DatabaseT,
-        ComponentAccessT
-    >;
-
-    explicit EntityDatabaseViewUnfiltered(Database *database)
-        : EntityDatabaseAccessInternal<Database>(database)
+    /**
+     * \brief Unfiltered Entity Database View.
+     * \tparam Database
+     */
+    template <
+        typename Database,
+        typename ComponentAccess
+    >
+        class EntityDatabaseViewUnfiltered
+        : protected EntityDatabaseAccessInternal<Database>
     {
-    }
+    public:
+        using DatabaseT = Database;
+        using ComponentAccessT = ComponentAccess;
+        using IteratorT = EntityIterator<
+            DatabaseT,
+            ComponentAccessT
+        >;
 
-    auto begin()
-    {
-        return IteratorT(this->mDatabase, this->entityPageBegin(), 0);
-    }
+        explicit EntityDatabaseViewUnfiltered(Database* database)
+            : EntityDatabaseAccessInternal<Database>(database)
+        {
+        }
 
-    auto end()
-    {
-        return IteratorT(this->mDatabase, this->entityPageEnd(), 0);
-    }
-};
+        auto begin()
+        {
+            return IteratorT(this->mDatabase, this->entity_page_begin(), 0);
+        }
+
+        auto end()
+        {
+            return IteratorT(this->mDatabase, this->entity_page_end(), 0);
+        }
+    };
 }
